@@ -1,0 +1,63 @@
+spring:
+  application:
+    name: business
+  aop:
+    proxy-target-class: false
+  rabbitmq:
+    host: 120.79.230.165
+    port: 5672
+    virtual-host: /
+    username: root
+    password: root
+  mail:
+    host: smtp.163.com
+    username: nju_SECIII@163.com
+    password: nju123
+    properties:
+      mail:
+        smtp:
+          auth: true
+          socketFactory:
+            port: 465
+            class: javax.net.ssl.SSLSocketFactory
+          starttls:
+            enable: true
+            required: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/seciii?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: root
+    driverClassName: com.mysql.jdbc.Driver
+# Specify the DBMS
+  jpa:
+    database: MYSQL
+# Show or not log for each sql query
+    show-sql: true
+# Hibernate ddl auto (create, create-drop, update)
+    hibernate:
+      ddl-auto: update
+# Naming strategy
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+# stripped before adding them to the entity manager)
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+#  mvc:
+#    static-path-pattern: /**
+#  resources:
+#    static-locations: /resources/static /resources/templates
+      #classpath: /static/
+      #classpath: /templates/
+
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+# 队列
+queue:
+  recycle: recycle
+  balance: balance
+  rank: rank
+  signup: signup
+  findpassword: findpassword

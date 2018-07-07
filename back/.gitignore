@@ -1,0 +1,17 @@
+
+#intellij
+.idea
+*.iml
+out
+
+#maven
+target
+*.jar
+
+#proj
+
+# vscode
+.dist
+
+# jupyter notebook
+.ipynb_checkpoints
